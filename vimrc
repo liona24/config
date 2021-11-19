@@ -81,3 +81,6 @@ set list
 let g:python_highlight_all = 1
 
 autocmd InsertLeave * set nopaste
+
+noremap <C-c> "*y
+noremap <C-v> "*p
