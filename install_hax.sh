@@ -32,7 +32,7 @@ pip install httpx ipython angr pwntools ropper pycryptodomex z3-solver
 
 deactivate
 
-wget -O /tmp/ghidra.zip https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.0.4_build/ghidra_10.0.4_PUBLIC_20210928.zip
+wget -O /tmp/ghidra.zip https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.2_build/ghidra_10.1.2_PUBLIC_20220125.zip
 sudo unzip -d /opt/ /tmp/ghidra.zip
 rm /tmp/ghidra.zip
 
