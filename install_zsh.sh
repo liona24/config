@@ -1,7 +1,14 @@
 #!/bin/bash
 
-sudo apt-get update --fix-missing
-sudo apt-get install -y zsh
+set -e
+
+INSTALLER=apt-get
+
+if ! [ -x "$(command -v $INSTALLER)" ]; then
+    INSTALLER=dnf
+fi
+
+sudo $INSTALLER install -y zsh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 chsh -s $(which zsh)
@@ -16,8 +23,6 @@ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
 git clone https://github.com/zsh-users/zsh-autosuggestions.git \
   "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 
-exit 0
-
 sed -i 's/^plugins=\(.*\)/plugins=(git fast-syntax-highlighting zsh-autosuggestions)/' "$shell_config"
 
 echo '
@@ -29,4 +34,3 @@ alias clip="xclip -sel clipboard"
 alias p=python3
 alias g=git
 alias gc="git checkout"' >> "$shell_config"
-
