@@ -1,7 +1,15 @@
 #!/bin/bash
 
-sudo apt-get update --fix-missing
-sudo apt-get install -y \
+set -e
+
+INSTALLER=dnf
+
+if ! [ -x "$(command -v $INSTALLER)" ]; then
+    INSTALLER=apt-get
+    sudo $INSTALLER update --fix-missing
+fi
+
+sudo $INSTALLER install -y \
     build-essential \
     curl \
     wget \
@@ -17,5 +25,5 @@ sudo apt-get install -y \
 
 git clone https://github.com/liona24/utility-scripts.git $HOME/utility-scripts
 
-echo 'export PATH="$PATH:$HOME/utility-scripts"' >> $HOME/.zshrc
-
+echo '
+export PATH="$PATH:$HOME/utility-scripts"' >> $HOME/.zshrc
