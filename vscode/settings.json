@@ -14,9 +14,10 @@
         "<C-f>": false,
         "<C-h>": false,
         "<C-S-f>": false,
-        "<C-S-h>": false
+        "<C-S-h>": false,
+        "<C-p>": false
     },
-    "extensions.ignoreRecommendations": false,
+    "extensions.ignoreRecommendations": true,
     "editor.acceptSuggestionOnEnter": "off",
     "explorer.confirmDragAndDrop": false,
     "editor.fontFamily": "'DejaVu Sans Mono'",
@@ -52,7 +53,6 @@
     "editor.tabCompletion": "on",
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "SynthWave '84",
     "lldb.executable": "lldb-7",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -68,6 +68,9 @@
     },
     "[html]": {
         "editor.tabSize": 2
+    },
+    "[rust]": {
+        "editor.formatOnSave": true
     },
     "terminal.integrated.fontSize": 16,
     "rust.clippy_preference": "on",
@@ -93,16 +96,26 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "clangd.path": "/usr/bin/clangd",
     "clangd.restartAfterCrash": true,
-    "C_Cpp.intelliSenseEngine": "Disabled",
+    "C_Cpp.intelliSenseEngine": "disabled",
     "[c]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
         "editor.tabSize": 2
     },
-    "files.associations": {
-        "*.scss": "scss"
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.tabSize": 2
     },
-    "codeQL.telemetry.enableTelemetry": false
+    "files.associations": {
+        "*.scss": "scss",
+        "*.jsm": "javascript"
+    },
+    "codeQL.telemetry.enableTelemetry": false,
+    "workbench.colorTheme": "SynthWave '84",
+    "codeQL.cli.executablePath": "/home/lion/codeql/codeql/codeql",
+    "[python]": {
+        "editor.formatOnType": true
+    },
 }

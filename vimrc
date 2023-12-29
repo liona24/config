@@ -27,6 +27,10 @@ let g:lightline = {
       \ },
       \ }
 
+colorscheme desert
+hi NonText ctermbg=NONE 
+hi Normal guibg=NONE ctermbg=NONE
+
 if executable('rg')
     set grepprg=rg\ --no-heading\ --vimgrep
     set grepformat=%f:%l:%c:%m

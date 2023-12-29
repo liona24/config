@@ -10,15 +10,12 @@ if ! [ -x "$(command -v $INSTALLER)" ]; then
 fi
 
 sudo $INSTALLER install -y \
-    build-essential \
     curl \
     wget \
     unzip \
     ca-certificates \
-    xclip \
     git \
     python3-pip \
-    python3-venv \
     cmake \
     ripgrep \
     netcat
